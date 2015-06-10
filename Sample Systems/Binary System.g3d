@@ -1,0 +1,125 @@
+Simulation Settings
+	MaxSimulationSteps	100000
+	G	1
+	DistanceExponent	2
+	Timestep	0.05
+	AnimationSpeed	1
+	CollisionType	2
+	CollisionsUseTrueRadii	0
+
+Drawing Settings
+	SolarSystemScale	0.5
+	SolarSystemUserFactor	1
+	RadiiScaling	0
+	RadiiScalingFactor	2.45962
+	VelocityScaling	0
+	VelocityScalingFactor	0.768433
+	AccelerationScaling	0.97044
+	AccelerationScalingFactor	2.45962
+	VectorsDisplayVelocity	0
+	VectorsDisplayAcceleration	0
+	UseStandardVectorColors	1
+	SelectedPlanet	-1
+	WireframeMode	0
+	TrailType	0
+	TrailStationary	1
+	TrailLength	2270
+	TrailSize	2
+	TrailFade	1
+	TrailNumPointsToSkip	0
+	LightingAmbient	0.1
+
+Environment Settings
+	ReverseBackground	0
+	AxesDisplay	0
+	AxesLabelsDisplay	0
+	StarsDisplay	1
+	StarsNumber	6000
+	StarDistribution	1
+	FieldVisualizationType	0
+
+Solar Plane
+	Normal	0,0,1
+	Display	1
+	Size	20
+	Resolution	21
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	0
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+Solar Plane
+	Normal	0,1,0
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+Solar Plane
+	Normal	1,0,0
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+View Controls
+	LookAtOption	0
+	LookFromOption	1
+	LookAtPlanet	2
+	LookFromPlanet	-1
+	ViewPosition	10.2796,-4.56618,1.71174
+
+Fun Controls
+	FieldOfView	60
+
+Planet
+	Name	"sun 1"
+	Radius	0.25
+	Mass	100
+	Position	-1,0,0
+	Velocity	0,5,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	255,0,0
+	LightSource	1
+
+Planet
+	Name	"sun 2"
+	Radius	0.25
+	Mass	100
+	Position	1,0,0
+	Velocity	0,-5,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,0,255
+	LightSource	1
+
+Planet
+	Name	"planet"
+	Radius	0.1
+	Mass	0.1
+	Position	10,0,0
+	Velocity	0,3,3
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	255,0,128
+	LightSource	0
+

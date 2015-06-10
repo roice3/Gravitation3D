@@ -1,0 +1,653 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\Gravitation3D.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Gravitation3D.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+BITMAP_ABOUT            BITMAP                  "res\\About.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open...\tCtrl+O",            ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
+        MENUITEM "Save Uses Reset State",       ID_SAVE_USES_RESET_STATE, CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "&Controls",                   ID_VIEW_CONTROLS
+        MENUITEM "&Toolbar",                    ID_VIEW_TOOLBAR
+        MENUITEM "&Status Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Register"
+    BEGIN
+        MENUITEM "&Register Gravitation3D...",  ID_REGISTRATION
+    END
+    POPUP "Report"
+    BEGIN
+        MENUITEM "Generate Report...",          ID_GENERATE_REPORT
+    END
+    POPUP "&About"
+    BEGIN
+        MENUITEM "&About Gravitation3D...",     ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 288, 214
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Gravitation3D"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CONTROL         138,IDC_STATIC,"Static",SS_BITMAP,7,7,274,179
+    DEFPUSHBUTTON   "OK",IDOK,7,193,274,14,WS_GROUP
+END
+
+PAGE_RENDERING_SETTINGS DIALOGEX 0, 0, 271, 210
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Drawing"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "General",IDC_STATIC,7,7,257,53
+    CONTROL         "Show Velocity Vectors",CHECK_VELOCITY_VECTORS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,19,86,10
+    CONTROL         "Show Acceleration Vectors",CHECK_ACCELERATION_VECTORS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,32,101,10
+    CONTROL         "Wireframe Mode",CHECK_WIREFRAME_MODE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,45,69,10
+    LTEXT           "Ambient Lighting",IDC_STATIC,158,19,54,8
+    CONTROL         "",SLIDER_AMBIENT_LIGHT,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,138,32,114,10
+    GROUPBOX        "Trail Controls",IDC_STATIC,7,66,257,130
+    GROUPBOX        "Trail Type",IDC_STATIC,20,81,55,61
+    CONTROL         "Line",RB_TRAIL_TYPE_LINE,"Button",BS_AUTORADIOBUTTON | WS_GROUP,35,96,29,10
+    CONTROL         "Dots",RB_TRAIL_TYPE_DOTS,"Button",BS_AUTORADIOBUTTON,35,110,29,10
+    CONTROL         "None",RB_TRAIL_TYPE_NONE,"Button",BS_AUTORADIOBUTTON,35,124,29,10
+    GROUPBOX        "Draw trail definition points",IDC_STATIC,108,81,115,47
+    CONTROL         "Stationary",RB_TRAIL_OPTION_STATIONARY,"Button",BS_AUTORADIOBUTTON | WS_GROUP,119,95,49,10
+    CONTROL         "To Simulate Motion",RB_TRAIL_OPTION_MOVE,"Button",BS_AUTORADIOBUTTON,119,109,76,10
+    CONTROL         "Fade Trails",CHECK_FADE_TRAIL,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,120,134,51,10
+    LTEXT           "Trail Length",IDC_STATIC,22,152,53,8
+    CONTROL         "",SLIDER_TRAIL_LENGTH,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,75,152,177,10
+    LTEXT           "Trail Size",IDC_STATIC,22,165,53,8
+    CONTROL         "",SLIDER_TRAIL_SIZE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,75,165,177,10
+    LTEXT           "Trail Accuracy",IDC_STATIC,22,177,53,8
+    CONTROL         "",SLIDER_TRAIL_ACCURACY,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,75,178,177,10
+END
+
+PAGE_SIMULATION_SETTINGS DIALOGEX 0, 0, 270, 210
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Simulation"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Simulation Settings",IDC_STATIC,7,7,253,118
+    LTEXT           "Gravitational Constant:",IDC_STATIC,21,26,76,8
+    EDITTEXT        EDIT_G,110,23,71,14,ES_AUTOHSCROLL
+    LTEXT           "Distance Exponent:",IDC_STATIC,21,45,64,8
+    EDITTEXT        EDIT_DISTANCE_EXPONENT,110,42,71,14,ES_AUTOHSCROLL
+    LTEXT           "Time Step:",IDC_STATIC,21,63,35,8
+    EDITTEXT        EDIT_TIME_STEP,110,60,71,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Calculate",BTN_CALCULATE_TIME_STEP,192,62,50,12
+    LTEXT           "Collision Type:",IDC_STATIC,21,82,47,8
+    COMBOBOX        COMBO_COLLISION_TYPE,110,80,71,45,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Apply",BTN_APPLY,16,101,235,13
+    GROUPBOX        "Animation Controls",IDC_STATIC,7,129,253,64
+    PUSHBUTTON      "Start",BTN_ANIMATION_START,18,148,74,13
+    PUSHBUTTON      "Stop",BTN_ANIMATION_STOP,98,148,74,13
+    PUSHBUTTON      "Reset",BTN_ANIMATION_RESET,177,148,74,13
+    LTEXT           "Speed:",IDC_STATIC,21,172,34,8
+    CONTROL         "",SLIDER_TRAIL_LENGTH,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,55,172,194,10
+END
+
+PAGE_ENVIRONMENT_SETTINGS DIALOGEX 0, 0, 270, 210
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Environment"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "General",IDC_STATIC,7,7,256,57
+    CONTROL         "Display Axes",CHECK_DISPLAY_AXES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,19,57,10
+    CONTROL         "Display Axes Labels",CHECK_DISPLAY_AXES_LABELS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,20,33,79,10
+    CONTROL         "Reverse Background Colors",CHECK_REVERSE_BACKGROUND,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,20,45,102,14
+    CONTROL         "Display Stars",CHECK_DISPLAY_STARS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,132,19,57,10
+    LTEXT           "Number of Stars:",IDC_STATIC,132,33,56,8
+    LTEXT           "Star Distribution:",IDC_STATIC,132,47,55,8
+    EDITTEXT        EDIT_NUM_STARS,194,30,59,13,ES_AUTOHSCROLL
+    COMBOBOX        COMBO_STAR_DISTRIBUTION,194,46,59,42,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Solar Plane Controls",IDC_STATIC,7,68,256,135
+    LISTBOX         LIST_SOLAR_PLANES,22,82,49,37,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Spline Solar Plane",CHECK_SPLINE_SOLAR_PLANE,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,92,67,72,10
+    CONTROL         "Warp Out Of Plane",CHECK_WARP_OUT_OF_PLANE,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,169,67,77,10
+    CONTROL         "Display Solar Plane",CHECK_DISPLAY_SOLAR_PLANE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,87,89,76,10
+    CONTROL         "Warp Solar Plane",CHECK_WARP_SOLAR_PLANE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,87,103,71,10
+    GROUPBOX        "Shape",IDC_STATIC,171,82,54,38
+    CONTROL         "Disk",RB_DISK,"Button",BS_AUTORADIOBUTTON | WS_GROUP,180,93,29,10
+    CONTROL         "Square",RB_SQUARE,"Button",BS_AUTORADIOBUTTON,180,106,39,10
+    LTEXT           "Size",IDC_STATIC,22,125,46,8
+    CONTROL         "",SLIDER_SOLAR_PLANE_SIZE,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,68,125,160,10
+    LTEXT           "Resolution",IDC_STATIC,22,137,46,8
+    CONTROL         "",SLIDER_SOLAR_PLANE_RESOLUTION,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,68,138,160,10
+    LTEXT           "Warp Scaling",IDC_STATIC,16,151,42,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,68,155,185,4
+    LTEXT           "Factor",IDC_STATIC,22,163,46,8
+    CONTROL         "",SLIDER_SOLAR_PLANE_WARP_MAG,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,68,163,160,10
+    LTEXT           "True",IDC_STATIC,22,176,46,8
+    CONTROL         "",SLIDER_SOLAR_PLANE_WARP_SCALING,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,68,176,160,10
+    LTEXT           "Uniform",IDC_STATIC,230,176,31,8
+    LTEXT           "Localization",IDC_STATIC,22,188,46,8
+    CONTROL         "",SLIDER_SOLAR_PLANE_WARP_LOC,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,68,189,160,10
+END
+
+PAGE_VIEW_CONTROLS DIALOGEX 0, 0, 212, 158
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Views"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Look At Point:",IDC_STATIC,7,7,46,8
+    COMBOBOX        COMBO_LOOKAT_POINT,7,23,198,105,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Look From Point:",IDC_STATIC,7,47,54,8
+    COMBOBOX        COMBO_LOOKFROM_POINT,7,61,198,107,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Additional View Controls:\n\n    Left mouse button rotates the view\n    Right mouse button zooms the view",IDC_STATIC,7,115,146,35
+    CONTROL         "Rotating Reference Frame",CHECK_ROTATING_REFERENCE_FRAME,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,89,101,10
+END
+
+PAGE_PLANETS DIALOGEX 0, 0, 271, 210
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Planets"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         LIST_PLANETS,7,7,85,131,LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Name:",IDC_STATIC,104,9,22,8
+    EDITTEXT        EDIT_PLANET_NAME,141,7,121,14,ES_AUTOHSCROLL
+    LTEXT           "Mass:",IDC_STATIC,104,29,20,8
+    EDITTEXT        EDIT_PLANET_MASS,141,27,121,14,ES_AUTOHSCROLL
+    LTEXT           "Radius:",IDC_STATIC,104,50,43,8
+    EDITTEXT        EDIT_PLANET_RADIUS,141,48,121,14,ES_AUTOHSCROLL
+    LTEXT           "Position: ",IDC_STATIC,104,70,30,8
+    EDITTEXT        EDIT_PLANET_POSITION,141,68,121,14,ES_AUTOHSCROLL
+    LTEXT           "Velocity:",IDC_STATIC,104,90,28,8
+    EDITTEXT        EDIT_PLANET_VELOCITY,141,88,121,14,ES_AUTOHSCROLL
+    COMBOBOX        COMBO_SLAVE_LIST,141,107,121,111,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Select Color",BTN_SELECT_COLOR,104,125,158,12
+    CONTROL         "Highlight selected planet",CHECK_HIGHLIGHT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,149,94,10
+    CONTROL         "Light Source",CHECK_IS_LIGHT_SOURCE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,104,149,55,10
+    CONTROL         "Locked",CHECK_IS_LOCKED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,169,149,38,10
+    CONTROL         "Ringed",CHECK_RINGED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,223,149,38,10
+    PUSHBUTTON      "Add",BTN_ADD,7,170,115,13
+    PUSHBUTTON      "Remove",BTN_REMOVE,141,170,121,13
+    PUSHBUTTON      "Apply",BTN_APPLY,7,190,255,13
+END
+
+PAGE_FUN_CONTROLS DIALOGEX 0, 0, 236, 58
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Fun"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Field of View",IDC_STATIC,7,16,49,8
+    CONTROL         "",SLIDER_FIELD_OF_VIEW,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,56,16,173,10
+END
+
+PAGE_SCALING_CONTROLS DIALOGEX 0, 0, 270, 210
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Scaling"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        "Overall System Scaling",IDC_STATIC,7,7,257,35
+    LTEXT           "Factor",IDC_STATIC,20,22,34,8
+    CONTROL         "",SLIDER_OVERAL_SYSTEM_SCALING_FACTOR,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,54,23,164,10
+    GROUPBOX        "Radii Scaling",IDC_STATIC,7,50,257,44
+    LTEXT           "Factor",IDC_STATIC,20,63,34,8
+    CONTROL         "",SLIDER_RADII_SCALING_FACTOR,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,54,63,164,10
+    LTEXT           "True",IDC_STATIC,20,77,34,8
+    CONTROL         "",SLIDER_RADII_SCALING,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,54,78,164,10
+    LTEXT           "Uniform",IDC_STATIC,227,77,36,8
+    GROUPBOX        "Velocity Vector Scaling",IDC_STATIC,7,104,257,44
+    LTEXT           "Factor",IDC_STATIC,20,118,34,8
+    CONTROL         "",SLIDER_VELOCITY_FACTOR,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,54,118,164,10
+    LTEXT           "True",IDC_STATIC,20,131,34,8
+    CONTROL         "",SLIDER_VELOCITY_SCALING,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,54,132,164,10
+    LTEXT           "Uniform",IDC_STATIC,227,131,36,8
+    GROUPBOX        "Acceleration Vector Scaling",IDC_STATIC,7,159,257,44
+    LTEXT           "Factor",IDC_STATIC,20,174,34,8
+    CONTROL         "",SLIDER_ACCELERATION_FACTOR,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,54,174,164,10
+    LTEXT           "True",IDC_STATIC,20,187,34,8
+    CONTROL         "",SLIDER_ACCELERATION_SCALING,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,54,188,164,10
+    LTEXT           "Uniform",IDC_STATIC,227,187,36,8
+END
+
+DLG_REGISTRATION DIALOGEX 0, 0, 270, 114
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Register Gravitation3D"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Greeting Text",TEXT_GREETING,7,7,256,8
+    LTEXT           "Email Address:",IDC_STATIC,7,28,48,8
+    EDITTEXT        EDIT_EMAIL_ADDRESS,80,26,183,14,ES_AUTOHSCROLL
+    LTEXT           "Registration Key:",IDC_STATIC,7,51,56,8
+    EDITTEXT        EDIT_REGISTRATION_KEY,80,49,183,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "Register!",IDOK,7,74,256,14
+    PUSHBUTTON      "Close",IDCANCEL,7,94,256,14
+END
+
+DLG_REPORT DIALOGEX 0, 0, 237, 153
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Generate Report"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Generate",IDOK,7,132,103,14
+    PUSHBUTTON      "Cancel",IDCANCEL,127,132,103,14
+    PUSHBUTTON      "Output File...",BTN_OUTPUT_FILE,7,112,223,14
+    LISTBOX         LIST_REPORT_PLANETS,7,22,223,83,LBS_OWNERDRAWFIXED | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Select masses to include in report:",IDC_STATIC,7,7,110,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "R3 Productions"
+            VALUE "FileDescription", "Gravitation3D"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "Gravitation3D.exe"
+            VALUE "LegalCopyright", "(c) 2002-2003 R3 Productions.  All rights reserved."
+            VALUE "OriginalFilename", "Gravitation3D.exe"
+            VALUE "ProductName", "Gravitation3D"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 281
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 207
+    END
+
+    PAGE_RENDERING_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 264
+        VERTGUIDE, 20
+        VERTGUIDE, 75
+        VERTGUIDE, 252
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    PAGE_SIMULATION_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 260
+        VERTGUIDE, 55
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    PAGE_ENVIRONMENT_SETTINGS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        VERTGUIDE, 22
+        VERTGUIDE, 68
+        VERTGUIDE, 92
+        VERTGUIDE, 253
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    PAGE_VIEW_CONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 205
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+
+    PAGE_PLANETS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        VERTGUIDE, 104
+        VERTGUIDE, 141
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    PAGE_FUN_CONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 229
+        VERTGUIDE, 56
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 51
+    END
+
+    PAGE_SCALING_CONTROLS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        VERTGUIDE, 54
+        VERTGUIDE, 218
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 203
+    END
+
+    DLG_REGISTRATION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        VERTGUIDE, 80
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+
+    DLG_REPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 230
+        VERTGUIDE, 110
+        VERTGUIDE, 127
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Gravitation3D\n\nGravitation3D\nGravitation3D Files (*.g3d)\n.g3d\nGravitation3D.Document\nGravitation3D Solar System"
+    ID_VIEW_CONTROLS        "Show or hide the G3D controls\nToggle G3D Controls"
+    ID_REGISTRATION         "Register Gravitation3D!"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Gravitation3D"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new document\nNew"
+    ID_FILE_OPEN            "Open an existing document\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the active document\nSave"
+    ID_FILE_SAVE_AS         "Save the active document with a new name\nSave As"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Gravitation3D (c) 2002-2003 R3 Productions"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Open this document"
+    ID_FILE_MRU_FILE2       "Open this document"
+    ID_FILE_MRU_FILE3       "Open this document"
+    ID_FILE_MRU_FILE4       "Open this document"
+    ID_FILE_MRU_FILE5       "Open this document"
+    ID_FILE_MRU_FILE6       "Open this document"
+    ID_FILE_MRU_FILE7       "Open this document"
+    ID_FILE_MRU_FILE8       "Open this document"
+    ID_FILE_MRU_FILE9       "Open this document"
+    ID_FILE_MRU_FILE10      "Open this document"
+    ID_FILE_MRU_FILE11      "Open this document"
+    ID_FILE_MRU_FILE12      "Open this document"
+    ID_FILE_MRU_FILE13      "Open this document"
+    ID_FILE_MRU_FILE14      "Open this document"
+    ID_FILE_MRU_FILE15      "Open this document"
+    ID_FILE_MRU_FILE16      "Open this document"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_CUT             "Cut the selection and put it on the Clipboard\nCut"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+END
+
+STRINGTABLE 
+BEGIN
+    32771                   "If checked, systems will be saved with the reset state.  If unchecked, the current simulation state will be saved."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\Gravitation3D.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,173 @@
+Simulation Settings
+	MaxSimulationSteps	100000
+	G	6.67259e-011
+	DistanceExponent	2
+	Timestep	60
+	AnimationSpeed	1
+	CollisionType	2
+	CollisionsUseTrueRadii	0
+
+Drawing Settings
+	SolarSystemScale	5e-007
+	SolarSystemUserFactor	1
+	RadiiScaling	0
+	RadiiScalingFactor	1
+	VelocityScaling	0
+	VelocityScalingFactor	1
+	AccelerationScaling	0
+	AccelerationScalingFactor	1
+	VectorsDisplayVelocity	0
+	VectorsDisplayAcceleration	0
+	UseStandardVectorColors	1
+	SelectedPlanet	-1
+	WireframeMode	0
+	TrailType	0
+	TrailStationary	1
+	TrailLength	2270
+	TrailSize	2
+	TrailFade	0
+	TrailNumPointsToSkip	0
+	LightingAmbient	0
+
+Environment Settings
+	ReverseBackground	0
+	AxesDisplay	0
+	AxesLabelsDisplay	0
+	StarsDisplay	0
+	StarsNumber	6000
+	StarDistribution	1
+	FieldVisualizationType	0
+
+Solar Plane
+	Normal	0,0,1
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	1.9269
+
+Solar Plane
+	Normal	0,1,0
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+Solar Plane
+	Normal	1,0,0
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+View Controls
+	LookAtOption	0
+	LookFromOption	2
+	LookAtPlanet	4
+	LookFromPlanet	3
+	ViewPosition	13.3753,43.5629,15.5232
+
+Fun Controls
+	FieldOfView	60
+
+Planet
+	Name	"earth"
+	Radius	6.37e+006
+	Mass	5.98e+024
+	Position	0,0,0
+	Velocity	0,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,0,255
+	LightSource	0
+
+Planet
+	Name	"satellite1"
+	Radius	100000
+	Mass	10
+	Position	7e+006,0,0
+	Velocity	0,7550.03,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	128,0,0
+	LightSource	0
+
+Planet
+	Name	"satellite2"
+	Radius	100000
+	Mass	10
+	Position	4e+006,0,-5.5e+006
+	Velocity	0,9800,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	128,0,128
+	LightSource	0
+
+Planet
+	Name	"satellite3"
+	Radius	100000
+	Mass	10
+	Position	0,-3e+007,0
+	Velocity	2579,0,2579
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	255,0,128
+	LightSource	0
+
+Planet
+	Name	"satellite4"
+	Radius	100000
+	Mass	10
+	Position	0,0,7e+006
+	Velocity	5339,5339,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,255,0
+	LightSource	0
+
+Planet
+	Name	"satellite5"
+	Radius	100000
+	Mass	10
+	Position	1e+007,1e+007,0
+	Velocity	3000,-2000,3000
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,128,255
+	LightSource	0
+
+Planet
+	Name	"sun"
+	Radius	0
+	Mass	10
+	Position	4.25e+007,0,0
+	Velocity	0,3046.24,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	255,128,0
+	LightSource	1
+

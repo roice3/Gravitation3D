@@ -1,0 +1,185 @@
+Simulation Settings
+	MaxSimulationSteps	100000
+	G	1
+	DistanceExponent	2
+	Timestep	0.001
+	AnimationSpeed	7
+	CollisionType	0
+	CollisionsUseTrueRadii	0
+
+Drawing Settings
+	SolarSystemScale	0.35007
+	SolarSystemUserFactor	1
+	RadiiScaling	0
+	RadiiScalingFactor	1
+	VelocityScaling	0
+	VelocityScalingFactor	1
+	AccelerationScaling	0
+	AccelerationScalingFactor	1
+	VectorsDisplayVelocity	0
+	VectorsDisplayAcceleration	0
+	UseStandardVectorColors	1
+	SelectedPlanet	-1
+	WireframeMode	1
+	TrailType	4
+	TrailStationary	1
+	TrailLength	100000
+	TrailSize	1
+	TrailFade	0
+	TrailNumPointsToSkip	35
+	LightingAmbient	1
+
+Environment Settings
+	ReverseBackground	1
+	AxesDisplay	0
+	AxesLabelsDisplay	0
+	StarsDisplay	1
+	StarsNumber	10000
+	StarDistribution	0
+	FieldVisualizationType	0
+
+Solar Plane
+	Normal	0,0,1
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	1.9269
+
+Solar Plane
+	Normal	0,1,0
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+Solar Plane
+	Normal	1,0,0
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+View Controls
+	LookAtOption	0
+	LookFromOption	1
+	LookAtPlanet	0
+	LookFromPlanet	1
+	ViewPosition	2.58133,4.34661,-2.88683
+
+Fun Controls
+	FieldOfView	57
+
+Planet
+	Name	"1"
+	Radius	1
+	Mass	100
+	Position	5,0,0
+	Velocity	0,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,0,64
+	LightSource	0
+
+Planet
+	Name	"2"
+	Radius	1
+	Mass	100
+	Position	-5,5,0
+	Velocity	0,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	128,0,0
+	LightSource	0
+
+Planet
+	Name	"3"
+	Radius	1
+	Mass	100
+	Position	0,0,0
+	Velocity	0,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,0,160
+	LightSource	0
+
+Planet
+	Name	"4"
+	Radius	0.5
+	Mass	50
+	Position	0,0,10
+	Velocity	0,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	255,128,0
+	LightSource	0
+
+Planet
+	Name	"5"
+	Radius	0.5
+	Mass	50
+	Position	0,-5,-5
+	Velocity	0,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	128,0,64
+	LightSource	0
+
+Planet
+	Name	"6"
+	Radius	0.6
+	Mass	80
+	Position	8,-3,2
+	Velocity	0,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	128,0,255
+	LightSource	0
+
+Planet
+	Name	"7"
+	Radius	2
+	Mass	120
+	Position	8,8,-8
+	Velocity	0,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	128,128,128
+	LightSource	0
+
+Planet
+	Name	"8"
+	Radius	2
+	Mass	150
+	Position	0,5,-4
+	Velocity	0,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,0,0
+	LightSource	0
+

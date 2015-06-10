@@ -1,0 +1,209 @@
+Simulation Settings
+	MaxSimulationSteps	100000
+	G	6.67259e-011
+	DistanceExponent	2
+	Timestep	86400
+	AnimationSpeed	1
+	CollisionType	2
+	CollisionsUseTrueRadii	0
+
+Drawing Settings
+	SolarSystemScale	8.47458e-013
+	SolarSystemUserFactor	1
+	RadiiScaling	0.0120416
+	RadiiScalingFactor	4.76066
+	VelocityScaling	0
+	VelocityScalingFactor	1
+	AccelerationScaling	0
+	AccelerationScalingFactor	1
+	VectorsDisplayVelocity	0
+	VectorsDisplayAcceleration	0
+	UseStandardVectorColors	1
+	SelectedPlanet	-1
+	WireframeMode	0
+	TrailType	0
+	TrailStationary	1
+	TrailLength	100000
+	TrailSize	1
+	TrailFade	0
+	TrailNumPointsToSkip	0
+	LightingAmbient	0.1
+
+Environment Settings
+	ReverseBackground	0
+	AxesDisplay	0
+	AxesLabelsDisplay	0
+	StarsDisplay	1
+	StarsNumber	6000
+	StarDistribution	1
+	FieldVisualizationType	0
+
+Solar Plane
+	Normal	0,0,1
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+Solar Plane
+	Normal	0,1,0
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+Solar Plane
+	Normal	1,0,0
+	Display	0
+	Size	10
+	Resolution	48
+	Warp	0
+	WarpOutOfPlane	1
+	Spline	0
+	Disk	1
+	WarpScaling	0
+	WarpScalingFactor	1
+	WarpLocalization	2
+
+View Controls
+	LookAtOption	0
+	LookFromOption	1
+	LookAtPlanet	-1
+	LookFromPlanet	-1
+	ViewPosition	0.190977,-0.2256,-0.0617553
+
+Fun Controls
+	FieldOfView	60
+
+Planet
+	Name	"sun"
+	Radius	6.96e+008
+	Mass	1.99e+030
+	Position	0,0,0
+	Velocity	6.2,12,0
+	Locked	1
+	HasRings	0
+	Orientation	1,1,6
+	Color	255,255,100
+	LightSource	1
+
+Planet
+	Name	"mercury"
+	Radius	2.43e+006
+	Mass	3.18e+023
+	Position	0,5.8e+010,0
+	Velocity	48000,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	255,0,0
+	LightSource	0
+
+Planet
+	Name	"venus"
+	Radius	6.06e+006
+	Mass	4.88e+024
+	Position	0,1.1e+011,0
+	Velocity	35000,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,255,0
+	LightSource	0
+
+Planet
+	Name	"earth"
+	Radius	6.37e+006
+	Mass	5.98e+024
+	Position	0,1.5e+011,0
+	Velocity	30000,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,0,255
+	LightSource	0
+
+Planet
+	Name	"mars"
+	Radius	3.37e+006
+	Mass	6.42e+023
+	Position	0,2.3e+011,0
+	Velocity	24000,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	255,0,0
+	LightSource	0
+
+Planet
+	Name	"jupiter"
+	Radius	6.99e+007
+	Mass	1.9e+027
+	Position	0,7.8e+011,0
+	Velocity	13000,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,255,0
+	LightSource	0
+
+Planet
+	Name	"saturn"
+	Radius	5.85e+007
+	Mass	5.68e+026
+	Position	0,1.4e+012,0
+	Velocity	9600,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,0,255
+	LightSource	0
+
+Planet
+	Name	"uranus"
+	Radius	2.33e+007
+	Mass	8.68e+025
+	Position	0,2.9e+012,0
+	Velocity	6800,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	255,0,0
+	LightSource	0
+
+Planet
+	Name	"neptune"
+	Radius	2.21e+007
+	Mass	1.03e+026
+	Position	0,4.5e+012,0
+	Velocity	5400,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,255,0
+	LightSource	0
+
+Planet
+	Name	"pluto"
+	Radius	1.5e+006
+	Mass	1.4e+022
+	Position	0,5.9e+012,5e+011
+	Velocity	4400,0,0
+	Locked	0
+	HasRings	0
+	Orientation	1,1,6
+	Color	0,0,255
+	LightSource	0
+

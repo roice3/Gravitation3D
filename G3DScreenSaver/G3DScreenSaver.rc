@@ -1,0 +1,127 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+ID_APP                  ICON                    "res\\Gravitation3D.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DLG_SCRNSAVECONFIGURE DIALOGEX 0, 0, 259, 158
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Configure G3D ScreenSaver Properties"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Download systems to display from the web?",CHECK_DOWNLOAD_FROM_WEB,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,7,245,10
+    LTEXT           "Select a directory containing display systems:",IDC_STATIC,7,25,245,8
+    PUSHBUTTON      "Select Directory...",BTN_BROWSE_DIRECTORY,7,39,245,14
+    LTEXT           "Select the number of frames to draw before cycling systems:",IDC_STATIC,7,61,245,8
+    EDITTEXT        EDIT_STEPS_PER_SYSTEM,7,76,245,14,ES_AUTOHSCROLL | ES_NUMBER
+    LTEXT           "Enter registration key to remove demo text:",IDC_STATIC,7,98,245,8
+    EDITTEXT        EDIT_REGISTRATION_KEY,7,113,245,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,7,137,118,14
+    PUSHBUTTON      "Cancel",IDCANCEL,134,137,118,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    DLG_SCRNSAVECONFIGURE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 252
+        VERTGUIDE, 125
+        VERTGUIDE, 134
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 151
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_DESCRIPTION         "Gravitation3D"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
