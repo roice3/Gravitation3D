@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C9302730-0EA8-47B2-959E-B96D02EE682A}</ProjectGuid>
+    <RootNamespace>G3DLib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v140</PlatformToolset>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>Debug\</OutDir>
+    <IntDir>Debug\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>Release\</OutDir>
+    <IntDir>Release\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)G3DLib.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)G3DLib.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="environment\environmentRenderer.cpp" />
+    <ClCompile Include="environment\gravityField.cpp" />
+    <ClCompile Include="environment\solarPlane.cpp" />
+    <ClCompile Include="file\g3dFileLoader.cpp" />
+    <ClCompile Include="gravityEngine\gravityEngine.cpp" />
+    <ClCompile Include="helpers\fullScreenHandler.cpp" />
+    <ClCompile Include="helpers\glInit.cpp" />
+    <ClCompile Include="helpers\glMaterial.cpp" />
+    <ClCompile Include="helpers\glNurbs.cpp" />
+    <ClCompile Include="helpers\gravitation3DHelper.cpp" />
+    <ClCompile Include="helpers\gravitation3DScaling.cpp" />
+    <ClCompile Include="helpers\referenceFrameHelper.cpp" />
+    <ClCompile Include="helpers\registrationHelper.cpp" />
+    <ClCompile Include="planet\planet.cpp" />
+    <ClCompile Include="planet\planetArray.cpp" />
+    <ClCompile Include="planet\testParticleSet.cpp" />
+    <ClCompile Include="renderer\g3dRenderer.cpp" />
+    <ClCompile Include="rigidBody\rigidBody.cpp" />
+    <ClCompile Include="settings\gravitation3DSettings.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="systemGenerator\systemGenerator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="environment\environmentRenderer.h" />
+    <ClInclude Include="environment\gravityField.h" />
+    <ClInclude Include="environment\solarPlane.h" />
+    <ClInclude Include="file\g3dFileLoader.h" />
+    <ClInclude Include="gravityEngine\gravityEngine.h" />
+    <ClInclude Include="helpers\fullScreenHandler.h" />
+    <ClInclude Include="helpers\glInit.h" />
+    <ClInclude Include="helpers\glMaterial.h" />
+    <ClInclude Include="helpers\glNurbs.h" />
+    <ClInclude Include="helpers\gravitation3DHelper.h" />
+    <ClInclude Include="helpers\gravitation3DScaling.h" />
+    <ClInclude Include="helpers\referenceFrameHelper.h" />
+    <ClInclude Include="helpers\registrationHelper.h" />
+    <ClInclude Include="planet\planet.h" />
+    <ClInclude Include="planet\planetArray.h" />
+    <ClInclude Include="planet\testParticleSet.h" />
+    <ClInclude Include="renderer\g3dRenderer.h" />
+    <ClInclude Include="rigidBody\rigidBody.h" />
+    <ClInclude Include="settings\gravitation3DSettings.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="systemGenerator\systemGenerator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\G3DScreenSaver\G3DScreenSaver.vcproj" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -51,3 +51,4 @@ G3DLib/Debug/*
 G3DStereo/Debug/*
 G3DScreenSaver/Debug/*
 SystemGenerator/Debug/*
+*.ipch

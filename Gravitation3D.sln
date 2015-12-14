@@ -1,23 +1,16 @@
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gravitation3D", "Gravitation3D\Gravitation3D.vcxproj", "{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}"
-EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{F18C5AA4-8000-4C26-B18C-6256ED18B463}"
-	ProjectSection(ProjectDependencies) = postProject
-		{C9302730-0EA8-47B2-959E-B96D02EE682A} = {C9302730-0EA8-47B2-959E-B96D02EE682A}
-	EndProjectSection
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "registrationKeyGenerator", "registrationKeyGenerator\registrationKeyGenerator.vcxproj", "{A7FBEB1C-D7E1-4FCF-A1F1-83DC3C6078D3}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "G3DLib", "G3DLib\G3DLib.vcxproj", "{C9302730-0EA8-47B2-959E-B96D02EE682A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "G3DStereo", "G3DStereo\G3DStereo.vcxproj", "{C22FB852-EC24-4ED4-8776-CA8CE1714995}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SystemGenerator", "SystemGenerator\SystemGenerator.vcxproj", "{369BA917-4A98-4EA8-B0D9-676C996B34D0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Gravitation3D", "Gravitation3D\Gravitation3D.vcxproj", "{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "G3DScreenSaver", "G3DScreenSaver\G3DScreenSaver.vcxproj", "{8F857EB6-16A9-48DC-BE5F-DE7A8BB7F216}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SaverSetup", "SaverSetup\SaverSetup.vdproj", "{CE4E9DFA-6EDE-46FE-A68E-10CD49677163}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SystemGenerator", "SystemGenerator\SystemGenerator.vcxproj", "{369BA917-4A98-4EA8-B0D9-676C996B34D0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "G3DStereo", "G3DStereo\G3DStereo.vcxproj", "{C22FB852-EC24-4ED4-8776-CA8CE1714995}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,34 +18,26 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}.Debug|Win32.ActiveCfg = Debug|Win32
-		{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}.Debug|Win32.Build.0 = Debug|Win32
-		{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}.Release|Win32.ActiveCfg = Release|Win32
-		{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}.Release|Win32.Build.0 = Release|Win32
-		{F18C5AA4-8000-4C26-B18C-6256ED18B463}.Debug|Win32.ActiveCfg = Debug
-		{F18C5AA4-8000-4C26-B18C-6256ED18B463}.Release|Win32.ActiveCfg = Release
-		{A7FBEB1C-D7E1-4FCF-A1F1-83DC3C6078D3}.Debug|Win32.ActiveCfg = Debug|Win32
-		{A7FBEB1C-D7E1-4FCF-A1F1-83DC3C6078D3}.Debug|Win32.Build.0 = Debug|Win32
-		{A7FBEB1C-D7E1-4FCF-A1F1-83DC3C6078D3}.Release|Win32.ActiveCfg = Release|Win32
-		{A7FBEB1C-D7E1-4FCF-A1F1-83DC3C6078D3}.Release|Win32.Build.0 = Release|Win32
 		{C9302730-0EA8-47B2-959E-B96D02EE682A}.Debug|Win32.ActiveCfg = Debug|Win32
 		{C9302730-0EA8-47B2-959E-B96D02EE682A}.Debug|Win32.Build.0 = Debug|Win32
 		{C9302730-0EA8-47B2-959E-B96D02EE682A}.Release|Win32.ActiveCfg = Release|Win32
 		{C9302730-0EA8-47B2-959E-B96D02EE682A}.Release|Win32.Build.0 = Release|Win32
-		{C22FB852-EC24-4ED4-8776-CA8CE1714995}.Debug|Win32.ActiveCfg = Debug|Win32
-		{C22FB852-EC24-4ED4-8776-CA8CE1714995}.Debug|Win32.Build.0 = Debug|Win32
-		{C22FB852-EC24-4ED4-8776-CA8CE1714995}.Release|Win32.ActiveCfg = Release|Win32
-		{C22FB852-EC24-4ED4-8776-CA8CE1714995}.Release|Win32.Build.0 = Release|Win32
-		{369BA917-4A98-4EA8-B0D9-676C996B34D0}.Debug|Win32.ActiveCfg = Debug|Win32
-		{369BA917-4A98-4EA8-B0D9-676C996B34D0}.Debug|Win32.Build.0 = Debug|Win32
-		{369BA917-4A98-4EA8-B0D9-676C996B34D0}.Release|Win32.ActiveCfg = Release|Win32
-		{369BA917-4A98-4EA8-B0D9-676C996B34D0}.Release|Win32.Build.0 = Release|Win32
+		{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}.Debug|Win32.Build.0 = Debug|Win32
+		{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}.Release|Win32.ActiveCfg = Release|Win32
+		{E3646C4D-606B-4B7D-98FB-03B97E1B47BF}.Release|Win32.Build.0 = Release|Win32
 		{8F857EB6-16A9-48DC-BE5F-DE7A8BB7F216}.Debug|Win32.ActiveCfg = Debug|Win32
 		{8F857EB6-16A9-48DC-BE5F-DE7A8BB7F216}.Debug|Win32.Build.0 = Debug|Win32
 		{8F857EB6-16A9-48DC-BE5F-DE7A8BB7F216}.Release|Win32.ActiveCfg = Release|Win32
 		{8F857EB6-16A9-48DC-BE5F-DE7A8BB7F216}.Release|Win32.Build.0 = Release|Win32
-		{CE4E9DFA-6EDE-46FE-A68E-10CD49677163}.Debug|Win32.ActiveCfg = Debug
-		{CE4E9DFA-6EDE-46FE-A68E-10CD49677163}.Release|Win32.ActiveCfg = Release
+		{369BA917-4A98-4EA8-B0D9-676C996B34D0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{369BA917-4A98-4EA8-B0D9-676C996B34D0}.Debug|Win32.Build.0 = Debug|Win32
+		{369BA917-4A98-4EA8-B0D9-676C996B34D0}.Release|Win32.ActiveCfg = Release|Win32
+		{369BA917-4A98-4EA8-B0D9-676C996B34D0}.Release|Win32.Build.0 = Release|Win32
+		{C22FB852-EC24-4ED4-8776-CA8CE1714995}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C22FB852-EC24-4ED4-8776-CA8CE1714995}.Debug|Win32.Build.0 = Debug|Win32
+		{C22FB852-EC24-4ED4-8776-CA8CE1714995}.Release|Win32.ActiveCfg = Release|Win32
+		{C22FB852-EC24-4ED4-8776-CA8CE1714995}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
