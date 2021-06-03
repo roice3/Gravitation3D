@@ -3,4 +3,4 @@ n-body simulator
 
 http://www.gravitation3d.com/
 
-![alt text](https://raw.githubusercontent.com/roice3/Gravitation3D/master/images/star.PNG)
+![alt text](https://github.com/roice3/Gravitation3D/blob/master/images/star.jpg)
