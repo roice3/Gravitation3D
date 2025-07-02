@@ -52,5 +52,11 @@ G3DStereo/Debug/*
 G3DScreenSaver/Debug/*
 SystemGenerator/Debug/*
 registrationKeyGenerator/Debug/*
+Gravitation3D/Release/*
+G3DLib/Release/*
+G3DStereo/Release/*
+G3DScreenSaver/Release/*
+SystemGenerator/Release/*
+registrationKeyGenerator/Release/*
 *.ipch
 *.vs/
