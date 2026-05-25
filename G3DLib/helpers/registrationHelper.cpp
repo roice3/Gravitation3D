@@ -12,6 +12,9 @@ CRegistrationHelper::CRegistrationHelper( )
 
 bool CRegistrationHelper::checkIsRegistered( CString versionString, CString registrationKey )
 {
+	// We are free now!
+	return true;
+
 	// Parse the registration key.
 	// It should be of the form emailaddress:code
 	CStringArray values;

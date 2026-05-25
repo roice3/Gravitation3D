@@ -468,127 +468,139 @@ CString getFileName( int fileNumber )
 	return( fileName );
 }
 
-int fileNumber = 1;	// Start with yesterdays
-int frameCounter = 0;
-CString screenFileName = "";
+int m_fileNumber = 1;	// Start with yesterdays
+int m_frameCounter = 0;
+CString m_screenFileName = "";
+
+void StartupWork()
+{
+	if (g_saverSettings->m_downloadFromWeb)
+	{
+		// For the files, we will start with yesterdays, then go backwards.
+		// We'll reset if less than the first archived file (09-18-2005).
+		CString fileName = getFileName(m_fileNumber);
+		if (fileName == "09-17-2005.g3d")
+		{
+			m_fileNumber = 1;
+			fileName = getFileName(m_fileNumber);
+		}
+
+		// Set the screen filename.
+		m_screenFileName = "G3D System of the Day Archive File: " + fileName;
+
+		// Check the local cache dir first in case we've downloaded it already.
+		CString localPath = getCacheDirectory();
+		localPath += fileName;
+		CFileFind finder;
+		if (finder.FindFile(localPath))
+		{
+			TRACE(localPath + "\n");
+			CStdioFile localFile(localPath, CFile::modeRead);
+			g_g3dHandler->m_fileLoader.loadDocument(localFile);
+		}
+		else
+		{
+			// Try to download from the web.
+			CString remotePath = "http://www.gravitation3d.com/SOD_archive/";
+			remotePath += fileName;
+			TRACE(remotePath + "\n");
+
+			// Load the file we will view from the web archive.
+			CInternetSession internetSession("G3D Internet Session");
+			try
+			{
+				CStdioFile* pFile = internetSession.OpenURL(remotePath);
+				if (pFile)
+				{
+					g_g3dHandler->m_fileLoader.loadDocument(*pFile);
+					pFile->Close();
+					delete(pFile);
+
+					// Save as a local file.
+					CFile localFile(localPath, CFile::modeCreate | CFile::modeWrite);
+
+					// It's weird, but I have to do this with an archive.
+					// CStdioFile and CArchive WriteString methods seem to do different things with the carriage return.
+					// Since G3D uses CArchive to read, I have to use it to write as well it seems.
+					CArchive archive(&localFile, CArchive::store);
+					g_g3dHandler->m_fileLoader.saveDocument(archive);
+				}
+				else
+				{
+					TRACE("No Internet Connection");
+					m_screenFileName = "No Internet Connection";
+					ASSERT(false);
+				}
+			}
+			catch (...)
+			{
+				m_screenFileName = "No Internet Connection";
+			}
+		}
+	}
+	else
+	{
+		// Load up the list of files if we haven't already.
+		if (!g_saverSettings->m_files.GetSize())
+		{
+			// Setup a file spec.
+			CString fileSpec = g_saverSettings->m_directory;
+			fileSpec += "*.g3d";
+
+			// Find all the files in this directory.
+			CFileFind finder;
+			BOOL bWorking = finder.FindFile(fileSpec);
+			while (bWorking)
+			{
+				bWorking = finder.FindNextFile();
+				g_saverSettings->m_files.Add(finder.GetFilePath());
+			}
+
+			// XXX Trace them out.
+			for (int i = 0; i < g_saverSettings->m_files.GetSize(); i++)
+				TRACE(g_saverSettings->m_files[i] + "\n");
+		}
+
+		// Reset the file number if necessary.
+		int index = m_fileNumber - 1;
+		if (index < 0 || index > g_saverSettings->m_files.GetUpperBound())
+		{
+			index = 0;
+			m_fileNumber = 1;
+		}
+
+		// Set the screen filename.
+		if (!g_saverSettings->m_files.GetSize())
+			m_screenFileName = "No files found in screen saver directory '" + g_saverSettings->m_directory + "'. Please check settings.";
+		else
+		{
+			m_screenFileName = "Local File: " + g_saverSettings->m_files[index];
+
+			CStdioFile localFile(g_saverSettings->m_files[index], CFile::modeRead);
+			g_g3dHandler->m_fileLoader.loadDocument(localFile);
+		}
+	}
+
+	// Setup some initial stuff.
+	g_g3dHandler->m_renderer.starsNeedRedraw();
+	g_g3dHandler->m_simulationSettings.m_maxSimulationSteps = g_saverSettings->m_numStepsPerFile * g_g3dHandler->m_simulationSettings.m_animationSpeed;
+	g_g3dHandler->m_planetArray.updateLargestMass();
+	g_g3dHandler->m_gravityEngine.calculateInitialAccelerations();
+	g_g3dHandler->m_gravityEngine.resetCurrentTimeStep();
+}
+
+void PickRandomFile()
+{
+	srand(GetCurrentTime());
+	m_fileNumber = (int)( CG3DHelper::getRandomDoubleInRange(0, 1000) );
+}
 
 void OnTimer(HDC hDC) //increment and display
 {
 	if( 0 == g_g3dHandler->m_gravityEngine.getCurrentTimeStep( ) )
 	{
-		if( g_saverSettings->m_downloadFromWeb )
-		{
-			// For the files, we will start with yesterdays, then go backwards.
-			// We'll reset if less than the first archived file (09-18-2005).
-			CString fileName = getFileName( fileNumber );
-			if( fileName == "09-17-2005.g3d" )
-			{
-				fileNumber = 1;
-				fileName = getFileName( fileNumber );
-			}
-
-			// Set the screen filename.
-			screenFileName = "G3D System of the Day Archive File: " + fileName;
-
-			// Check the local cache dir first in case we've downloaded it already.
-			CString localPath = getCacheDirectory();
-			localPath += fileName;
-			CFileFind finder;
-			if( finder.FindFile( localPath ) )
-			{
-				TRACE( localPath + "\n" );
-				CStdioFile localFile( localPath, CFile::modeRead );
-				g_g3dHandler->m_fileLoader.loadDocument( localFile );
-			}
-			else
-			{
-				// Try to download from the web.
-				CString remotePath = "http://www.gravitation3d.com/SOD_archive/";
-				remotePath += fileName;
-				TRACE( remotePath + "\n" );
-
-				// Load the file we will view from the web archive.
-				CInternetSession internetSession( "G3D Internet Session" );
-				try
-				{
-					CStdioFile * pFile = internetSession.OpenURL( remotePath );
-					if( pFile )
-					{
-						g_g3dHandler->m_fileLoader.loadDocument( *pFile );
-						pFile->Close( );
-						delete( pFile );
-
-						// Save as a local file.
-						CFile localFile( localPath, CFile::modeCreate | CFile::modeWrite );
-
-						// It's weird, but I have to do this with an archive.
-						// CStdioFile and CArchive WriteString methods seem to do different things with the carriage return.
-						// Since G3D uses CArchive to read, I have to use it to write as well it seems.
-						CArchive archive( &localFile, CArchive::store );
-						g_g3dHandler->m_fileLoader.saveDocument( archive );
-					}
-					else
-					{
-						TRACE( "No Internet Connection" );
-						screenFileName = "No Internet Connection";
-						ASSERT( false );
-					}
-				}
-				catch( ... )
-				{
-					screenFileName = "No Internet Connection";
-				}
-			}
-		}
-		else
-		{
-			// Load up the list of files if we haven't already.
-			if( ! g_saverSettings->m_files.GetSize() )
-			{
-				// Setup a file spec.
-				CString fileSpec = g_saverSettings->m_directory;
-				fileSpec += "*.g3d";
-
-				// Find all the files in this directory.
-				CFileFind finder;
-				BOOL bWorking = finder.FindFile( fileSpec );
-				while( bWorking )
-				{
-					bWorking = finder.FindNextFile();
-					g_saverSettings->m_files.Add( finder.GetFilePath() );
-				}
-
-				// XXX Trace them out.
-				for( int i=0; i<g_saverSettings->m_files.GetSize(); i++ )
-					TRACE( g_saverSettings->m_files[i] + "\n" );
-			}
-
-			// Reset the file number if necessary.
-			int index = fileNumber - 1;
-			if( index < 0 || index > g_saverSettings->m_files.GetUpperBound() )
-			{
-				index = 0;
-				fileNumber = 1;
-			}
-
-			// Set the screen filename.
-			if( ! g_saverSettings->m_files.GetSize() )
-				screenFileName = "No files found in screen saver directory '" + g_saverSettings->m_directory + "'. Please check settings.";
-			else
-			{
-				screenFileName = "Local File: " + g_saverSettings->m_files[index];
-
-				CStdioFile localFile( g_saverSettings->m_files[index], CFile::modeRead );
-				g_g3dHandler->m_fileLoader.loadDocument( localFile );
-			}
-		}
-
-		// Setup some initial stuff.
-		g_g3dHandler->m_renderer.starsNeedRedraw();
-		g_g3dHandler->m_simulationSettings.m_maxSimulationSteps = g_saverSettings->m_numStepsPerFile*g_g3dHandler->m_simulationSettings.m_animationSpeed;
-		g_g3dHandler->m_planetArray.updateLargestMass( );
-		g_g3dHandler->m_gravityEngine.calculateInitialAccelerations( );
-		g_g3dHandler->m_gravityEngine.resetCurrentTimeStep( );
+		PickRandomFile();
+		StartupWork();
 	}
 
 	// Handle simulation speed.
@@ -600,16 +612,16 @@ void OnTimer(HDC hDC) //increment and display
 
 	// Render our scene.
 	CVector3D viewPosition = g_g3dHandler->m_viewControls.m_viewPosition;
-	g_g3dHandler->m_renderer.renderScene( viewPosition, false, g_g3dHandler->m_registered, screenFileName );
+	g_g3dHandler->m_renderer.renderScene( viewPosition, false, g_g3dHandler->m_registered, m_screenFileName );
 	SwapBuffers(hDC);
-	frameCounter++;
+	m_frameCounter++;
 
 	// Handle setting up for the next file.
-	if( frameCounter >= g_saverSettings->m_numStepsPerFile )
+	if( m_frameCounter >= g_saverSettings->m_numStepsPerFile )
 	{
 		g_g3dHandler->m_gravityEngine.resetCurrentTimeStep( );
-		frameCounter = 0;
-		fileNumber++;
+		m_frameCounter = 0;
+		m_fileNumber++;
 	}
 }
 
@@ -618,7 +630,7 @@ void CleanupGlobals()
 	delete( g_g3dHandler );
 	delete( g_saverSettings );
 	cacheDir = "";
-	screenFileName = "";
+	m_screenFileName = "";
 }
 
 int CALLBACK BrowseCallbackProc( HWND hwnd, UINT uMsg, LPARAM lParam, LPARAM pData ) 
